@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Service -WOW{% endblock %}
+
+{% block styles %}
+    <style>
+       
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="flex w-full">
+            <div class="grid h-screen flex-grow card bg-base-300  place-items-center">
+                <div class="flex flex-col w-full border-opacity-50">
+                    <div class="grid h-20 card bg-base-300 place-items-center">
+                        
+                        <select class="select select-bordered w-full max-w-xs">
+                            <option disabled selected>Select a patient</option>
+                            <option>Han Solo</option>
+                            <option>Greedo</option>
+                            <option>Messi</option>
+                          </select>
+                    </div>
+                    
+                    
+                    <div id="customerDetails" class="grid h-20 card bg-base-300  place-items-center hidden">
+                        <!-- Customer details will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            <div class="divider divider-horizontal"></div>
+            <div class="grid h-screen flex-grow card bg-base-300 place-items-center">
+                <div class="chat chat-start">
+                    <div class="chat-bubble">It's over Anakin, <br/>I have the high ground.</div>
+                </div>
+                <div class="chat chat-end">
+                    <div class="chat-bubble">You underestimate my power!</div>
+                </div>
+                <form class="user-input" onsubmit="sendMessage(); return false;" style="display: flex; align-items: flex-end;">
+                    <input type="text" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" style="margin-right: 5px;" />
+                    <button class="btn btn-primary">Send</button>
+                </form>                
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    
+       <script>
+    function showCustomerDetails(customer) {
+        // Get the customer details element
+        var customerDetails = document.getElementById('customerDetails');
+        
+        // Get dummy data for the selected customer (you can replace this with your actual data)
+        var customerData = getCustomerData(customer);
+        
+        // Update the customer details section with the data
+        customerDetails.innerHTML = customerData;
+        
+        // Show the customer details section
+        customerDetails.classList.remove('hidden');
+    }
+    
+    function getCustomerData(customer) {
+        // Dummy data for demonstration
+        var customerDetails = '';
+        if (customer === 'customer1') {
+            customerDetails = '<p>Customer 1 Details</p>';
+        } else if (customer === 'customer2') {
+            customerDetails = '<p>Customer 2 Details</p>';
+        }
+        return customerDetails;
+    }
+
+        // Function to show patient details based on selected option
+        function showCustomerDetails(customerId) {
+            // Code to show customer details based on the selected option
+            console.log("Showing details for customer: " + customerId);
+        }
+    
+        // Event listener to trigger showCustomerDetails function when option is changed
+        document.getElementById('patientSelect').addEventListener('change', function() {
+            var selectedPatient = this.value;
+            showCustomerDetails(selectedPatient);
+        });
+    </script>
+{% endblock %}
