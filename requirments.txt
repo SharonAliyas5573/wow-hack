@@ -1,0 +1,4 @@
+chromadb
+sentence_transformers
+unstructured
+langchain~=0.0.270
