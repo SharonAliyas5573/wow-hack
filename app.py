@@ -8,6 +8,7 @@ from utils.ai_utils import *
 app = Flask(__name__)
 
 
+
 # Function to get folder names in a specified directory
 def get_folder_names(directory):
     return [
@@ -123,4 +124,4 @@ def add_patient():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
