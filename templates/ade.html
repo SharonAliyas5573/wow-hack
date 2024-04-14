@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drug Adverse Effects Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #ddd;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background-color: #111;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #ddd;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #aaa;
+      }
+      select,
+      input[type='text'],
+      input[type='submit'] {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        color: #ddd;
+      }
+      input[type='submit'] {
+        background-color: #6a5acd; /* Purple accent color */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      input[type='submit']:hover {
+        background-color: #483d8b; /* Darker shade when hovered */
+      }
+      .ade-result {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-gray-900 shadow-md">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between h-16">
+          <!-- Product Name -->
+          <div class="flex-shrink-0 flex items-center">
+            <h1 class="text-lg font-bold">Clinical DSS</h1>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="flex items-center">
+            <a href="/" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Drug Adverse Effects Checker</h1>
+      <form method="post">
+        <label for="folder">Select a folder:</label>
+        <select name="folder" id="folder">
+          {% for folder in folders %}
+            <option value="{{ folder }}">{{ folder }}</option>
+          {% endfor %}
+        </select>
+        <label for="drug_name">Enter drug name:</label>
+        <input type="text" name="drug_name" id="drug_name" />
+        <input type="submit" value="Check ADE" />
+      </form>
+      {% if ade_result %}
+        <div class="ade-result">
+          <h2>Adverse Effects Result:</h2>
+          <p>{{ ade_result }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

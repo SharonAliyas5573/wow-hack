@@ -1,0 +1,7 @@
+{
+    "reader": "PDFReader",
+    "chunker": "TokenChunker",
+    "embedder": "MiniLMEmbedder",
+    "retriever": "WindowRetriever",
+    "generator": ""
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinical Decision Support System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-gray-900 text-white">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 shadow-md">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between h-16">
+          <!-- Product Name -->
+          <div class="flex-shrink-0 flex items-center">
+            <h1 class="text-lg font-bold">Clinical DSS</h1>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="flex items-center">
+            <a href="/summary" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Summarization</a>
+            <a href="/ade" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">ADE</a>
+            <a href="/rec" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Recommendations</a>
+            <a href="/add" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add Patient</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <!-- Content Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Text Content -->
+        <div>
+          <h2 class="text-4xl font-semibold mb-4">Welcome to Clinical Decision Support System</h2>
+          <p class="text-lg">Clinical Decision Support Systems (CDSS) are designed to assist clinicians in making more informed decisions by leveraging advanced technologies.</p>
+          <p class="text-lg mt-4">These systems can be trained on large medical datasets to provide personalized treatment reccomendation , summarise patient records and identify adverse drug interactions.</p>
+        </div>
+        <!-- Accent Image -->
+        <div class="hidden md:block">
+          <img src="https://w0.peakpx.com/wallpaper/114/880/HD-wallpaper-abstract-purple-mixed-abstract-purple.jpg" alt="Accent Image" class="rounded-lg shadow-md" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

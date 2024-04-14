@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Record Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2d2d2d; /* Matte Black */
+            color: #ffffff; /* White text */
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #363636; /* Dark Gray */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #666666; /* Gray border */
+            border-radius: 5px;
+            background-color: #4a4a4a; /* Dark Gray */
+            color: #ffffff; /* White text */
+        }
+
+        input[type="submit"] {
+            background-color: #6a0dad; /* Purple */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #520a95; /* Darker Purple */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-gray-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-16">
+            <!-- Product Name -->
+            <div class="flex-shrink-0 flex items-center">
+              <h1 class="text-lg font-bold">Clinical DSS</h1>
+            </div>
+  
+            <!-- Navigation Links -->
+            <div class="flex items-center">
+              <a href="/" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h2>Patient Record Form</h2>
+        <form action="/add" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="drugs">Drugs:</label>
+                <textarea type="text" id="drugs" name="drugs" required></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
